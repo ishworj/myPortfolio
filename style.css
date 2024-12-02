@@ -16,7 +16,6 @@
 }
 html{
     scroll-behavior: smooth;
-
 }
 
 *{
@@ -25,6 +24,7 @@ html{
 
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 .container{
     width: 80%;
@@ -95,6 +95,7 @@ header{
     position: sticky;
     top: 0;
     background-color: var(--body-bg);
+    overflow-x: hidden;
 }
 
 header .header{
@@ -124,8 +125,9 @@ header .header{
     width: 4px;
     height: 100%;
     position: absolute;
-    left: 33%;
+    left: 25%;
 }
+
 
 .navigation{
     list-style: none;
@@ -154,8 +156,7 @@ header .header{
 
 .hero-section{
     margin-top: 5rem;
-    max-height: 60vh;
-    padding: 10rem;
+    padding-top: 10rem;
 }
 
 .hero{
@@ -182,6 +183,7 @@ header .header{
     font-size: 2.2rem;
     font-weight: bolder;
     letter-spacing: 5px;
+    
 }
 .left  button{
     background-color: var(--dark-bg);
@@ -204,7 +206,7 @@ header .header{
 
 /* banner section  */
 .banner{
-    margin-top: 7rem;
+    margin-top: 10rem;
     border: 2px solid var(--border-color) ;
     box-shadow: var(--shadow);
     padding: 2rem;
@@ -286,7 +288,7 @@ grid-template-columns: repeat(2,1fr);
 .about {
     margin-top: 5rem;
     background-color: rgba(147, 188, 66, 0.597);
-    padding: 5rem;
+    padding: 5rem 0;
 }
 
 .about .about-content{
@@ -393,4 +395,110 @@ line-height: 1.5rem;
     position: fixed;
     right: 20px;
     bottom: 60px;
+}
+
+
+
+#hamburger{
+    display: none;
+}
+
+[for="hamburger"]{
+    display: none;
+}
+/* mediaQuery */
+@media(max-width:768px){
+
+    [for="hamburger"]{
+        cursor: pointer;
+        display: block;
+    }
+    .menu{
+        position: absolute;
+        background-color: var(--body-bg);
+        width: 250px;
+        height: 100vh;
+        top: 3.7rem;
+
+        box-shadow: var(--shadow);
+        left:100vw;
+
+        transition: all 1.3s ;
+    }
+
+    .menu .navigation{
+        flex-direction: column;
+        font-size: 1rem;
+        
+    }
+
+    .menu .navigation li{
+        line-height: 2.5rem;
+        
+    }
+
+    #hamburger:checked + .menu{
+        left : calc(100vw - 250px);
+    }
+    
+
+    /* /hero? */
+    .hero{
+        grid-template-areas: 
+        "right"
+        "left";
+
+    }
+    
+    .hero .right {
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .hero .right  img {
+        height: 100%;
+        width: 90%;
+
+    }
+
+    /* banner */
+    .banner{
+        flex-direction: column;  
+        align-items: flex-start; 
+        padding: 20%;       
+    }
+
+    .info-divider{
+        display:none;}
+
+    .projects{
+        padding: 0rem;
+    }
+
+    .projects .project-container{
+        grid-template-columns: 1fr;
+        }
+
+    
+
+    .about-content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .myImg{
+        width: 100%;
+    }
+    
+    .contact{
+        width: 80%;
+    }
+
+    .email-section {
+       transform: scale(0.70);
+    }
+    
+
 }
