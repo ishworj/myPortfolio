@@ -414,7 +414,7 @@ line-height: 1.5rem;
         display: block;
     }
     .menu{
-        position: absolute;
+        position: fixed;
         background-color: var(--body-bg);
         width: 250px;
         height: 100vh;
@@ -424,6 +424,7 @@ line-height: 1.5rem;
         left:100vw;
 
         transition: all 1.3s ;
+        
     }
 
     .menu .navigation{
@@ -496,9 +497,6 @@ line-height: 1.5rem;
         width: 80%;
     }
 
-    .email-section {
-       transform: scale(0.70);
-    }
     [for="darkmode"] {
         top:8rem;
         left: 1rem;
