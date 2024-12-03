@@ -499,6 +499,11 @@ line-height: 1.5rem;
     .email-section {
        transform: scale(0.70);
     }
+    [for="darkmode"] {
+        top:8rem;
+        left: 1rem;
+    
+    }
     
 
 }
