@@ -455,7 +455,11 @@ line-height: 1.5rem;
         
     }
 
-    #hamburger:checked + .menu{
+    /* #hamburger:checked + .menu{
+        left : calc(100vw - 250px);
+    } */
+
+    .slide{
         left : calc(100vw - 250px);
     }
     
