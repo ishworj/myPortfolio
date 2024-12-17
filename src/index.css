@@ -1,0 +1,527 @@
+:root{
+
+    --color-orange:orangered;
+    --color-dark:#2a2a2a;
+
+    --body-bg:rgb(61, 228, 228);
+    --text-color:var(--color-dark);
+    --border-color:var(--color-dark);
+
+
+    --dark-bg: var(--color-dark);
+    --dark-textcolor : white;
+    --dark-border-color:white;
+
+    --shadow: 10px -2px 40px 9px rgb(69, 82, 87);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+    gap: 1rem;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid{
+    display: grid;
+    gap: 1rem;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.wrapper{
+    background-color: var(--body-bg);
+    min-height: 100vh;
+}
+
+/* darkmode toggler  */
+
+[for="darkmode"] {
+    position: fixed;
+    top:8rem;
+    left: 3rem;
+
+}
+
+[for="darkmode"]:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.3s;
+
+}
+ /* title */
+.title{
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.title span {
+border-bottom: 2px solid var(--color-orange);
+}
+
+/* nav bar  */
+header{
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    background-color: var(--body-bg);
+    overflow-x: hidden;
+}
+
+header .header{
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+}
+
+.logo{
+    font-size: 1.3rem;
+    position: relative;
+}
+.logo :first-child{
+    font-weight: bold;
+    margin-right: 1rem;
+
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.line::before{
+    content: "";
+    background-color: var(--color-orange);
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 30%;
+}
+
+
+.navigation{
+    list-style: none;
+    font-weight: bold;
+}
+
+.navigation li:hover{
+    color: var(--color-orange);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+
+
+/* Applying dark mode feature */
+#darkmode:checked + .wrapper{
+    --body-bg: var(--dark-bg);
+    color: var(--dark-textcolor);
+    --border-color:var(--dark-border-color);
+}
+/* Applying dark mode feature */
+#darkmode:checked + .wrapper > .about{
+
+    background-color: var(--dark-bg);
+    color: var(--dark-textcolor);
+}
+
+#darkmode{
+    display: none;
+}
+/* hero section  */
+
+.hero-section{
+    padding-top: 6rem;
+    padding-bottom: 2.2rem;
+    
+}
+
+.hero{
+    background: var(--color-orange);
+    grid-template-areas: "left right";
+    box-shadow: var(--shadow);
+}
+
+.left{
+    grid-area: left;
+    padding: 2rem ;
+    flex-direction: column;
+    margin-left: 10vw;
+    justify-content: center;
+
+}
+
+.left div span{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.left .tag{
+    font-size: 2.2rem;
+    font-weight: bolder;
+    letter-spacing: 5px;
+    
+}
+.left  button{
+    background-color: var(--dark-bg);
+    color: var(--dark-textcolor);
+    padding:1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.right{
+    grid-area: right;
+    justify-content: end;
+    align-items: center;
+    margin-top: -5rem;
+}
+
+.right img{
+    height: 100%;
+}
+
+/* banner section  */
+.banner{
+    margin-top:6rem;
+    border: 2px solid var(--border-color) ;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    border-radius: 50px;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.info-divider{
+    background: gray;
+    width: 2px;
+    height: 70px;
+    
+}
+
+.info-content .icon-container{ 
+    background: var(--color-orange);
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    font-size: 2rem;
+    color: white;
+}
+.info-content div span{
+    font-size: 1.3rem;
+    font-weight: bolder;
+    letter-spacing: 5px;
+}
+
+.info-content div p {
+    color: var(--color-orange);
+}
+
+/* skills section  */
+.skills{
+    padding-top: 6rem;
+    padding-bottom:6rem;
+}
+
+.skills-container{
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skills-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skills-container > div i {
+    font-size: 3rem;
+}
+/* project section  */
+
+.projects .project-container{
+grid-template-columns: repeat(2,1fr);
+}
+
+.projects .project-card{
+    box-shadow: var(--shadow);
+    border-radius: 5px;
+    padding-bottom: 3rem;
+}
+
+.project-card .links{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 1rem;
+    
+}
+/* About me section  */
+.about {
+    background-color: rgba(147, 188, 66, 0.597);
+    padding: 2rem 0rem 4rem 0rem;
+}
+
+.about .about-content{
+gap: 5rem;
+}
+
+.about .myImg{
+    width: 40%;
+}
+.my-bio h2{
+    letter-spacing: 5px;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.about .my-bio p:nth-child(4), .my-bio .tag{
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.my-bio .tag + div > span {
+    padding: .8rem 1.2rem;
+    border-radius: 5px;
+}
+.my-bio .tag + div > span:hover{
+    background: grey;
+    cursor: pointer;
+    transform: scale(1.3);
+    transition: all 0.32s;
+
+}
+
+
+/* Contact section  */
+.contact{
+    width: 400px;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+}
+
+.contact .social{
+    font-size: 4rem;
+    justify-content: space-between;
+}
+
+.contact h3 {
+    text-align: center;
+    padding: 3rem;
+}
+
+.contact .email-section{
+    background: black;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    
+    gap: 3rem;
+}
+.contact .email-section span{
+    font-size: 1.5rem;
+}
+
+.contact .email-icon{
+    background-color: var(--color-orange);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+
+
+}
+/* Footer section  */
+footer {
+    min-height: 30vh;
+    color: white;
+    background-color: var(--dark-bg);
+    flex-direction: column;
+}
+
+footer .top{
+    margin-bottom: 1rem;
+    gap: 5rem;
+
+}
+footer .bottom{
+    padding-bottom: 1rem;
+}
+footer .top ul li{
+line-height: 1.5rem;
+    
+} 
+
+.top ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* goup */
+.goUp{
+    font-size: 3rem;
+    background-color: var(--color-orange);
+    border-radius: 50%;
+    padding: .3rem;
+
+    position: fixed;
+    right: 20px;
+    bottom: 60px;
+}
+
+
+
+#hamburger{
+    display: none;
+}
+
+[for="hamburger"]{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mediaQuery */
+@media(max-width:768px){
+
+    [for="hamburger"]{
+        cursor: pointer;
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        background-color: var(--body-bg);
+        width: 250px;
+        height: 100vh;
+        top: 3.7rem;
+
+        box-shadow: var(--shadow);
+        left:100vw;
+
+        transition: all 1.3s ;
+        
+    }
+
+    .menu .navigation{
+        flex-direction: column;
+        font-size: 1rem;
+        
+    }
+
+    .menu .navigation li{
+        line-height: 2.5rem;
+        
+    }
+
+    #hamburger:checked + .menu{
+        left : calc(100vw - 250px);
+    }
+    
+
+    /* /hero? */
+    .hero{
+        grid-template-areas: 
+        "right"
+        "left";
+
+    }
+    
+    .hero .right {
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .hero .right  img {
+        height: 100%;
+        width: 90%;
+
+    }
+
+    /* banner */
+    .banner{
+        flex-direction: column;  
+        align-items: flex-start; 
+        padding: 20%;       
+    }
+
+    .info-divider{
+        display:none;}
+
+    .projects{
+        padding: 0rem;
+    }
+
+    .projects .project-container{
+        grid-template-columns: 1fr;
+        }
+
+        .about .about-content {
+            gap: 2rem;
+        }
+
+    .about-content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #aboutMeImg{
+        width: 250%;
+    }
+
+    
+    .contact{
+        width: 80%;
+    }
+
+    [for="darkmode"] {
+        top:8rem;
+        left: 1rem;
+    
+    }
+    
+
+}
