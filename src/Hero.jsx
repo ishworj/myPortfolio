@@ -13,7 +13,7 @@ const Hero = () => {
                     </div>
                     <p>I solve real life problems with the help of coding 💻</p>
                     <div>
-                        <a href="/assets/MyProfile.png" download="">
+                        <a href="/ishworkarki-resume.docx" target='_blank' >
                             <button>Download CV <i className="fa-solid fa-download"></i></button>
                         </a>
                     </div>
